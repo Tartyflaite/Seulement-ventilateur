@@ -6,16 +6,17 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = $connection->prepare("SELECT * FROM users WHERE username=? AND password=?");
+        $query = $connection->prepare("SELECT * FROM users WHERE username=?");
+        
 
-        $query->execute([$username, $password]);
+        $query->execute([$username]);
         $result = $query->fetch(PDO::FETCH_ASSOC);
 
-        if(!$result){
-            echo "<p class='error'>Mauvais nom d'utilisateur ou mot de passe !</p>";
+        if($result && password_verify($_POST['password'], $result['password'])){
+            echo "<p class='success'>Connexion réussie !</p>";
         }
         else{
-            echo "<p class='success'>Connexion réussie !</p>";
+            echo "<p class='error'>Mauvais nom d'utilisateur ou mot de passe !</p>";
         }
     }
 ?>
@@ -23,7 +24,7 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <form method="post" action="" name="signin-form">
+        <form method="post" action="" name="login-form">
         <div class="form-element">
             <label>Username</label>
             <input type="text" name="username" pattern="[a-zA-Z0-9]+" required />
