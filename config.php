@@ -1,9 +1,13 @@
 <?php
-$USER  = 'localhost';
-$USER = 'root';
-$PASSWORD  = '';
 
-$link = mysql_connect($USER , $USER , $PASSWORD)
-    or die("Impossible de se connecter : " . mysql_error());
+define('USER', 'root');
+define('PASSWORD', '');
+define('HOST', 'localhost');
+define('DATABASE', 'test');
+try {
+    $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
+} catch (PDOException $e) {
+    exit("Error: " . $e->getMessage());
+}
 
 ?>
