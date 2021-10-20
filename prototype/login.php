@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $config = require_once('config.php');
     require_once('db_conn.php');
 
     if(isset($_POST['username'], $_POST['password'])){

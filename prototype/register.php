@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $config = require_once('config.php');
     require_once('db_conn.php');
 
     if(isset($_POST['username'], $_POST['password'])){
@@ -13,7 +12,7 @@
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
             $result = $query->execute([$username, $hashed_password]);
-            
+
             if($result === false){
                 echo "<p class='success'>Cet utilisateur existe déjà !</p>";
             }
