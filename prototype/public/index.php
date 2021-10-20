@@ -1,2 +1,2 @@
 <?php
-echo "seulementVentilateurs";
+    require_once('index.html');
