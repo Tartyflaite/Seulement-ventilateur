@@ -1,6 +1,4 @@
 <?php
-    require_once('db_conn.php');
-
     if(isset($_POST['username'], $_POST['password'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -25,4 +23,4 @@
         }
     }
 
-require_once('register.html');
+require_once(ROOT.'\views\register.html');
