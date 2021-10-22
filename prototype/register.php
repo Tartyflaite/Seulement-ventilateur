@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require_once('db_conn.php');
 
     if(isset($_POST['username'], $_POST['password'])){
