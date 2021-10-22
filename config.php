@@ -3,6 +3,6 @@
 return [
     'host' => 'localhost',
     'username' => 'root',
-    'password' => '',
-    'db_name' => 'test'
+    'password' => 'OnlyFans',
+    'db_name' => 'SeulementVentilateurs'
 ];
