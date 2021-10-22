@@ -23,6 +23,7 @@ if(! isset($_POST['username'], $_POST['password'])) {
 
     if(password_verify($_POST['password'], $result['password'])){
         $_SESSION['connected'] = true;
+        $_SESSION['username'] = $username;
         header( 'Location: /public/index.php?controller=home' );
         exit;
     }
