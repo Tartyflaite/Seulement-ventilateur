@@ -1,3 +1,21 @@
 <!DOCTYPE html>
-<html>
-<h1>Bonjour <?php if(isset($_SESSION['username'])){echo($_SESSION['username']);}else{echo("ventilateur annonyme");}?></h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SeulementVentilateurs</title>
+    <link href="/views/css/base.css" rel="stylesheet">
+    <link href="/views/css/home.css" rel="stylesheet">
+    <link href="/views/css/navbar.css" rel="stylesheet">
+</head>
+<body class="site-body">
+    <header class="site-header">
+        <?php include(ROOT.'/views/navbar/navbar.html'); ?>
+    </header>
+    <div class="site-content">
+    <?php include(ROOT.'/views/home_content.html'); ?>
+    <?php include(ROOT.'/views/image_feed.php'); ?>
+    </div>
+    <footer class="site-footer">
+        <?php include(ROOT.'/views/footer.html'); ?>
+    </footer>
+</body>

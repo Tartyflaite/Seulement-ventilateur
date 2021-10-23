@@ -1,12 +1,12 @@
-<header class="site-header">
-    <div class="wrapper site-header__wrapper">
-        <a href="#" class="brand">SeulementVentilateurs</a>
-        <nav class="nav">
-        <ul class="nav__wrapper">
-            <li class="nav__item"><a href="#">Upload</a></li>
-            <li class="nav__item"><a href="#">Profil</a></li>
-            <li class="nav__item"><a href="index.php?controller=logout">Se deconnecter</a></li>
-        </ul>
-        </nav>
+<nav>
+    <div class="logo-div">
+        <a href="#">
+            <img src="../assets/logo.png" alt="logo-img" class="logo-img"/>
+        </a>
     </div>
-    </header>
+    <?php if(isset($_SESSION['connected']) && $_SESSION['connected'] == true): ?>
+    <?php include(ROOT.'/views/navbar/navbar_connected.html'); ?>
+    <?php else: ?>
+    <?php include(ROOT.'/views/navbar/navbar_notconnected.html'); ?>
+    <?php endif; ?>
+</nav>
