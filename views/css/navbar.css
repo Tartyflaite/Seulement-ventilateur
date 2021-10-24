@@ -13,6 +13,7 @@ nav{
     display: flex;
     justify-content: center;
     margin-right: auto;
+    padding-top: 10px;
 }
 
 .nav-item{
@@ -25,7 +26,6 @@ nav{
     width: 100px;
     height: 100px;
     transition: 1.8s;
-    padding-top: 10px;
 }
 
 .logo-img:hover {
