@@ -1,6 +1,6 @@
 <?php
 
-require_once('upload_img.html');
+require_once('..\views\upload_img.html');
 
 if( isset($_POST['submit'])){
 
@@ -32,7 +32,7 @@ if( isset($_POST['submit'])){
         echo "c une image";
     }
     $tmpName = $_FILES['upload_file']['tmp_name'];
-    $filePath = "public\ImageVentilo\ ".$fileName;
+    $filePath = "..\public\ImageVentilo\ ".$fileName;
     $resultat = move_uploaded_file($tmpName, $filePath);
     if($resultat){
         echo "transfert terminé !";

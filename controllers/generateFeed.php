@@ -1,5 +1,5 @@
 <?php
-require_once('db_conn.php');
+//require_once('db_conn.php');
 
 //POUR LE FAIRE EN AVEC UNE REQUETE SLQ (POUR PLUS TARD)
 //$stmt = DB()->query("SELECT * FROM users");
@@ -10,12 +10,12 @@ require_once('db_conn.php');
 //
 //}
 
-$mydir = 'public\ImageVentilo';
+$mydir = '..\public\ImageVentilo';
 
 $files = array_diff(scandir($mydir), array('.', '..'));
 
 foreach($files as $file) {
 ?>
-    <img src="public/ImageVentilo/<?php echo $file; ?>">
+    <img src="../public/ImageVentilo/<?php echo $file; ?>">
 <?php
 }
