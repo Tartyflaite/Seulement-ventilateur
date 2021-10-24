@@ -1,8 +1,13 @@
 <?php
-    session_start();
+    if(!isset($_SESSION['started'])){
+        session_start();
+        $_SESSION['started'] = true;
+    }
+
     const ROOT = __DIR__;
     $config = require_once('config.php');
     $conn = null;
+
 
 function DB(): PDO {
     global $config;
@@ -25,11 +30,11 @@ function route($controller): string {
 
     $controller = $_GET['controller'] ?? 'home';
 
-    if(!file_exists(ROOT.'/controllers/'.$controller.'.php')){
-        require('views/notfound.html');
+    if(!file_exists(ROOT.'\controllers\\'.$controller.'.php')){
+        header("HTTP/1.1 404 Not Found");
         exit;
     }
 
 
-    require('controllers/'.$controller.'.php');
+    require_once('controllers\\'.$controller.'.php');
 

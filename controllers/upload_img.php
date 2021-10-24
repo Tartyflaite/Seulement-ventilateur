@@ -1,5 +1,12 @@
 <?php
 
+
+if(!isset($_SESSION['connected'])){
+    require_once(ROOT.'/views/notconnected.html');
+    exit;
+}
+
+require_once('..\views\navbar\navbar.html');
 require_once('..\views\upload_img.html');
 
 if( isset($_POST['submit'])){
