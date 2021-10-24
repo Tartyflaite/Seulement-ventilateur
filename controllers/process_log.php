@@ -17,7 +17,7 @@ if(! isset($_POST['username'], $_POST['password'])) {
 
     if(!$result){
         $_SESSION['flash']['error'] = 'bad_user';
-        header('Location : index.php?controller=login');
+        header( 'Location: /public/index.php?controller=login' );
         exit;
     }
 
@@ -31,5 +31,5 @@ if(! isset($_POST['username'], $_POST['password'])) {
 
 $_SESSION['flash']['error'] = 'bad_password';
 $_SESSION['flash']['username'] = $username;
-header('Location : index.php?controller=login');
+header( 'Location: /public/index.php?controller=login' );
 exit;
