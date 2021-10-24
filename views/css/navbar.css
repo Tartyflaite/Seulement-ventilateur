@@ -14,22 +14,30 @@ nav{
     width: 33%;
 }
 
-.brand-img{
-    display: flex;
-    width:25%;
-    height: 25%;
-    padding-left: 20px;
-}
-
 .logo-div{
     display: flex;
     justify-content: center;
     padding-top: 10px;
+    width: 33%;
+}
+
+.nav-links{
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.brand-img{
+    display: flex;
+    padding-left: 20px;
+    width: 50%;
 }
 
 .nav-item{
     display: flex;
-    justify-content: center;
+    justify-content: right;
     padding-right: 20px;
 }
 

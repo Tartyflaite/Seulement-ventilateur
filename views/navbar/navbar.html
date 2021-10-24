@@ -1,5 +1,5 @@
 <nav>
-    <div class="brand">
+    <div class="brand-div">
         <a href="index.php?controller=home">
             <img src="../assets/brand.png" alt="brand-img" class="brand-img"/>
         </a>
@@ -9,9 +9,11 @@
             <img src="../assets/logo.png" alt="logo-img" class="logo-img"/>
         </a>
     </div>
-    <?php if(isset($_SESSION['connected']) && $_SESSION['connected'] == true): ?>
-    <?php include(ROOT.'/views/navbar/navbar_connected.html'); ?>
-    <?php else: ?>
-    <?php include(ROOT.'/views/navbar/navbar_notconnected.html'); ?>
-    <?php endif; ?>
+    <div class="nav-links">
+        <?php if(isset($_SESSION['connected']) && $_SESSION['connected'] == true): ?>
+        <?php include(ROOT.'/views/navbar/navbar_connected.html'); ?>
+        <?php else: ?>
+        <?php include(ROOT.'/views/navbar/navbar_notconnected.html'); ?>
+        <?php endif; ?>
+    </div>
 </nav>
