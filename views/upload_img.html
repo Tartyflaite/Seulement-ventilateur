@@ -6,10 +6,17 @@
     <link href="/views/css/base.css" rel="stylesheet">
     <link href="/views/css/navbar.css" rel="stylesheet">
 </head>
-<body>
+<body class="site-body">
+<header class="site-header">
+    <nav class="navbar">
+        <?php include(ROOT.'/views/navbar/navbar.html'); ?>
+    </nav>
+</header>
+<div class="site-content">
     <form enctype="multipart/form-data" action='..\controllers\upload_img.php' method='post'  />
-        <input type="file" name="upload_file"/>
-        <input type="submit" name="submit"/>
+    <input type="file" name="upload_file"/>
+    <input type="submit" name="submit"/>
+</div>
 </body>
 </html>
 

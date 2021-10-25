@@ -9,7 +9,9 @@
 </head>
     <body>
     <header class="site-header">
-        <?php include(ROOT.'/views/navbar/navbar.html'); ?>
+        <nav v-show="!mobile" class="navbar">
+            <?php include(ROOT.'/views/navbar/navbar.html'); ?>
+        </nav>
     </header>
     <div class="site-content">
         <form method="post" action="index.php?controller=process_log" name="login-form">

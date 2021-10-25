@@ -16,6 +16,6 @@ $files = array_diff(scandir($mydir), array('.', '..'));
 
 foreach($files as $file) {
 ?>
-    <img src="../public/ImageVentilo/<?php echo $file; ?>">
+    <img src="../public/ImageVentilo/<?php echo $file; ?>" class="feed-img">
 <?php
 }
