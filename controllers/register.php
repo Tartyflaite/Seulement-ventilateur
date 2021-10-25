@@ -4,6 +4,7 @@
         $password = $_POST['password'];
 
         try{
+
             $query = DB()->prepare("INSERT INTO users VALUES(?,?)");
 
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
@@ -17,7 +18,7 @@
                 echo "<p class='success'>Utilisateur enregistré !</p>";
             }
             $query->fetch();
-        } 
+        }
         catch (PDOException $e) {
             throw $e;
         }
