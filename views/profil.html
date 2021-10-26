@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>SeulementVentilateurs</title>
-    <link href="/views/css/base.css" rel="stylesheet">
-    <link href="/views/css/home.css" rel="stylesheet">
-    <link href="/views/css/navbar.css" rel="stylesheet">
+    <?php include(ROOT.'/views/base_head.html'); ?>
 </head>
 <body class="site-body">
 <header class="site-header">
-    <nav v-show="!mobile" class="navbar">
-        <?php include(ROOT.'/views/navbar/navbar.html'); ?>
-    </nav>
+    <?php include(ROOT.'/views/navbar/navbar.html'); ?>
 </header>
 <div class="site-content">
     Profil

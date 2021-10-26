@@ -1,0 +1,5 @@
+<?php if(isset($_SESSION['connected']) && $_SESSION['connected'] == true): ?>
+<?php include(ROOT.'/views/navbar/navbar_connected.html'); ?>
+<?php else: ?>
+<?php include(ROOT.'/views/navbar/navbar_notconnected.html'); ?>
+<?php endif; ?>
