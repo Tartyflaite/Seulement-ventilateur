@@ -1,21 +1,26 @@
 <?php
-//require_once('db_conn.php');
+$query = DB()->prepare("SELECT * FROM content");
+$result = $query->execute();
 
-//POUR LE FAIRE EN AVEC UNE REQUETE SLQ (POUR PLUS TARD)
-//$stmt = DB()->query("SELECT * FROM users");
-//
-//$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//
-//foreach ($users as $user){
-//
-//}
-
-$mydir = '..\public\ImageVentilo';
-
-$files = array_diff(scandir($mydir), array('.', '..'));
-
-foreach($files as $file) {
-?>
-    <img src="../public/ImageVentilo/<?php echo $file; ?>" class="feed-img">
-<?php
+while($row = $query->fetch($result))
+    {
+    $username = $row['user'];
+    $file = $row['image_path'];
+    $description = $row['image_path'];
+    ?>
+        <div class="item">
+            <div class="small_logo">
+                <img src="../views/img/pp.jpeg" alt="user_logo">
+            </div>
+            <div class="item_wrapper">
+                                <span class="username">
+                                    <?php echo $username;?>
+                                </span>
+                <span class="description">
+                                    <?php echo $description;?>
+                                </span>
+                <img class="content_item" src="<?php echo $file;?>" alt="content_img">
+            </div>
+        </div>
+    <?php
 }

@@ -1,27 +1,25 @@
 <?php
-    if(isset($_POST['username'], $_POST['password'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $query = DB()->prepare("INSERT INTO users VALUES(?,?)");
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+    $result = $query->execute([$username, $hashed_password]);
 
-        try{
+if($result === false){
+    $_SESSION['flash']['error'] = "L'tlisateur ".$username." existe déjà.";
+    $redirect = 'index';
+}
 
-            $query = DB()->prepare("INSERT INTO users VALUES(?,?)");
-
-            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-
-            $result = $query->execute([$username, $hashed_password]);
-
-            if($result === false){
-                echo "<p class='success'>Cet utilisateur existe déjà !</p>";
-            }
-            else{
-                echo "<p class='success'>Utilisateur enregistré !</p>";
-            }
-            $query->fetch();
-        }
-        catch (PDOException $e) {
-            throw $e;
-        }
+    else{
+        $_SESSION['flash'] = array();
+        $_SESSION['flash']['success'] = "Inscription réussie.";
+        $_SESSION['username'] = $username;
+        $redirect = 'home';
     }
 
-require_once(ROOT.'\views\register.html');
+$_POST = array();
+header('Location: /public/index.php?controller='.$redirect);
+exit;
+
+
+

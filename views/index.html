@@ -6,18 +6,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="index_styles.css">
-    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="../views/css/index_styles.css">
+    <link rel="stylesheet" href="../views/css/modal.css">
 
 </head>
 <body>
     <div class="container">
         <div class="logo_side">
-            <img class="logo_full" src="img/Seulement_Ventilateur_-_transparent.png">
+            <img class="logo_full" src="<?php get_asset('Seulement_Ventilateur_-_transparent.png')?>">
         </div>
 
         <div class="user_side">
-            <img class="small_logo" src="img/ventilateurBLANC.png">
+            <img class="small_logo" src="<?php get_asset('VentilateurBLANC.png')?>">
 
             <h1>
                 Ça se passe <br> maintenant
@@ -34,47 +34,49 @@
                 <div class="modal" id="modal_inscription">
                     <button data-close-button class="close-button">&times;</button>
 
-                    <div class="form">
+                    <form method="post" action="index.php?controller=register" name="register-form" class="form">
                         <h3>Inscrivez vous</h3>
 
                         <div class="form_element">
                             <label for="username1">Pseudonyme</label>
-                            <input type="text" id="username1" placeholder="votre pseudonyme">
+
+                            <input type="text" id="username1" name="username" placeholder="votre pseudonyme" required="required">
                         </div>
 
                         <div class="form_element">
                             <label for="password1">Mot de passe</label>
-                            <input type="password" id="password1" placeholder="votre mot de passe">
+                            <input type="password" id="password1" name="password" placeholder="votre mot de passe" required="required">
                         </div>
 
                         <div class="form_element">
                             <button>Inscription</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
                 <button data-modal-target="#modal_connection" id="connect" class="first">Se connecter</button>
+                <div class="error"><?php if(isset($_SESSION['flash']['error'])){echo $_SESSION['flash']['error'];}?></div>
 
                 <div class="modal" id="modal_connection">
                     <button data-close-button class="close-button">&times;</button>
 
-                    <div class="form">
+                    <form method="post" action="index.php?controller=process_log" name="login-form" class="form">
                         <h3>Connectez vous</h3>
 
                         <div class="form_element">
                             <label for="username2">Pseudonyme</label>
-                            <input type="text" id="username2" placeholder="votre pseudonyme">
+                            <input type="text" id="username2" name="username" placeholder="votre pseudonyme" required="required">
                         </div>
 
                         <div class="form_element">
                             <label for="password2">Mot de passe</label>
-                            <input type="password" id="password2" placeholder="votre mot de passe">
+                            <input type="password" id="password2" name="password" placeholder="votre mot de passe" required="required">
                         </div>
 
                         <div class="form_element">
                             <button>Connection</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -86,6 +88,6 @@
 
     <div id="overlay" ></div>
 
-    <script defer src="script.js"></script>
+    <script defer src="../views/js/script.js"></script>
 </body>
 </html>

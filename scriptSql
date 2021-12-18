@@ -1,4 +1,4 @@
 create table users(
     username varchar(255),
-    password binary(255)
+    password varchar(255)
 );

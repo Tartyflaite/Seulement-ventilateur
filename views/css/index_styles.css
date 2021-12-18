@@ -232,3 +232,8 @@ footer{
         width: 100%;
     }
 }
+
+.error {
+    color: red;
+    font-style: italic;
+}

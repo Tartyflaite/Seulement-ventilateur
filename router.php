@@ -27,8 +27,11 @@ function route($controller): string {
     return "index.php?controller=$controller";
 }
 
+function get_asset($string): void {
+    echo "../assets/$string";
+}
 
-    $controller = $_GET['controller'] ?? 'home';
+    $controller = $_GET['controller'] ?? 'index';
 
     if(!file_exists(ROOT.'\controllers\\'.$controller.'.php')){
         header("HTTP/1.1 404 Not Found");

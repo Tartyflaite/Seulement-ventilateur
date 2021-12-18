@@ -1,4 +1,5 @@
 <?php
     $_SESSION = array();
-    header( 'Location: /public/index.php' );
+    $_SESSION['flash'] = array();
+    header( 'Location: /public/index.php?controller=index' );
     exit;
