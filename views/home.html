@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="home_styles.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li id="small_logo">
+                        <img class="small_logo" src="img/ventilateurBLANC.png">
+                    </li>
+
+                    <li>
+                        <button>
+                            <i class='bx bx-home-smile' style='color:#ffffff'  ></i>
+                            <span class="item_label">Acceuil</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-modal-target="#modal_profil" id="inscire">
+                            <i class='bx bx-user' style='color:#ffffff'  ></i>
+                            <span class="item_label">Profil</span>
+                        </button>
+
+                    </li>
+                    <li>
+                        <button data-modal-target="#modal_ventiler" id="ventiler">
+                            <i class='bx bxs-party'></i>
+                            <span class="item_label">Ventiler</span>
+                        </button>
+                    </li>
+                    <li id="deco">
+                        <button>
+                            <i class='bx bx-door-open' style='color:#ffffff'  ></i>
+                            <span class="item_label">Deconnection</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="main">
+                <div class="main_header">
+                    Acceuil
+                    <i class='bx bx-cross' style='color:#ffffff'  ></i>
+                </div>
+
+                <div class="item">
+                    <div class="small_logo">
+                        <img  src="img/pp.jpeg">
+                    </div>
+                    <div class="item_wrapper">
+                        <span class="username">Username</span>
+                        <span class="description">
+                               testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
+                                dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
+                            </span>
+                        <img class="content_item" src="img/fans.jpg">
+                    </div>
+
+                </div>
+
+
+                <div class="item">
+                    <div class="small_logo">
+                        <img  src="img/pp.jpeg">
+                    </div>                    <div class="item_wrapper">
+                        <span class="username">Username</span>
+                        <span class="description">
+                               testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
+                                dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
+                            </span>
+                        <img class="content_item" src="img/3d.jpg">
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="small_logo">
+                        <img  src="img/pp.jpeg">
+                    </div>                    <div class="item_wrapper">
+                        <span class="username">Username</span>
+                        <span class="description">
+                               testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
+                                dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
+                            </span>
+                        <img class="content_item" src="img/aestetic.jpg">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="left_credit">
+                <div class="content">
+                    <div class="content_header">
+                        Credit
+                    </div>
+                    <ul>
+                        <li>Stefan Radovanovic</li>
+                        <li>Raphaël Bouchez</li>
+                        <li>Waderson Novembre</li>
+                        <li>Guillaume De La Grandière</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal" id="modal_profil">
+            <button data-close-button class="close-button">&times;</button>
+            <div class="profil_item">
+                Editeur de profil
+
+                <input type="text" placeholder="nouveau pseudo">
+                <input type="text" placeholder="nouveau mot de passe">
+                <div class="profil_picture">
+                    <div class="dialog">
+                        <label for="import_pp" class="style_button">
+                            <i class='bx bx-upload' style='color:#2aaee6'  ></i>
+                        </label>
+                        <input type="file" id="import_pp">
+                        <span id="text_label">Nouvelle photo de profil</span>
+                    </div>
+                    <div class="preview" id="preview_pp">
+                        <img src="" class="pp_preview_pp">
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper_update">
+                <button>
+                    <i class='bx bx-up-arrow-alt' style='color:#142f5d'  ></i>
+                    Update
+                </button>
+            </div>
+
+        </div>
+
+        <div class="modal" id="modal_ventiler">
+            <button data-close-button class="close-button">&times;</button>
+            <div class="upload_content">
+                <div class="text_decription">
+                    <textarea id="description" placeholder="Quoi de neuf ?"></textarea>
+                </div>
+
+                <div class="img_upload">
+                    <div class="img_preview" id="imgPreview">
+                        <img src="" class="image_preview_image">
+                    </div>
+                    <div class="button_container">
+                        <label for="import_file" class="style_button">
+                            <i class='bx bx-upload' style='color:#2aaee6'  ></i>
+                        </label>
+                        <input type="file" id="import_file">
+                        <button id="trash" class="style_button">
+                            <i class='bx bx-trash' style='color:#2aaee6'></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <button class="upload">
+                        <i class='bx bxs-party'></i>
+                        Ventiler
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="overlay" ></div>
+        <script defer src="script.js"></script>
+
+</body>
+</html>

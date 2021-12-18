@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--    https://stackoverflow.com/a/3791058-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="index_styles.css">
+    <link rel="stylesheet" href="modal.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo_side">
+            <img class="logo_full" src="img/Seulement_Ventilateur_-_transparent.png">
+        </div>
+
+        <div class="user_side">
+            <img class="small_logo" src="img/ventilateurBLANC.png">
+
+            <h1>
+                Ça se passe <br> maintenant
+            </h1>
+
+            <h2>
+                Rejoignez SeulementVentilateur dès aujourd'hui.
+            </h2>
+
+            <div class="bouton">
+
+                <button data-modal-target="#modal_inscription" id="inscire" class="first">S'inscrire</button>
+
+                <div class="modal" id="modal_inscription">
+                    <button data-close-button class="close-button">&times;</button>
+
+                    <div class="form">
+                        <h3>Inscrivez vous</h3>
+
+                        <div class="form_element">
+                            <label for="username1">Pseudonyme</label>
+                            <input type="text" id="username1" placeholder="votre pseudonyme">
+                        </div>
+
+                        <div class="form_element">
+                            <label for="password1">Mot de passe</label>
+                            <input type="password" id="password1" placeholder="votre mot de passe">
+                        </div>
+
+                        <div class="form_element">
+                            <button>Inscription</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button data-modal-target="#modal_connection" id="connect" class="first">Se connecter</button>
+
+                <div class="modal" id="modal_connection">
+                    <button data-close-button class="close-button">&times;</button>
+
+                    <div class="form">
+                        <h3>Connectez vous</h3>
+
+                        <div class="form_element">
+                            <label for="username2">Pseudonyme</label>
+                            <input type="text" id="username2" placeholder="votre pseudonyme">
+                        </div>
+
+                        <div class="form_element">
+                            <label for="password2">Mot de passe</label>
+                            <input type="password" id="password2" placeholder="votre mot de passe">
+                        </div>
+
+                        <div class="form_element">
+                            <button>Connection</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <p>Pour les ventiloFans par les ventiloFans</p>
+    </footer>
+
+    <div id="overlay" ></div>
+
+    <script defer src="script.js"></script>
+</body>
+</html>

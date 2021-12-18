@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Work+Sans:wght@700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #15202B;
+}
+
+h1, h2, p{
+    color: #F8FDFF;
+}
+
+h1, h2, h3{
+    font-family: 'Work Sans', 'Bold 700';
+}
+
+h1{
+    font-size: 4em;
+}
+
+h2{
+    font-size: 2em;
+}
+
+h3{
+    font-size: 1.5em;
+}
+
+p{
+    font-family: 'Open Sans', 'Medium 500';
+    font-size: 1em;
+}
+
+
+/*CONTAINER*/
+
+.container{
+    flex: 1 0 auto;
+    display: flex;
+}
+
+/*LOGO   SIDE*/
+
+.logo_side{
+    width: 55vw;
+
+    background-color: rgb(42, 174, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_side .logo_full{
+    padding: 2em;
+    width: 100%;
+    height: auto;
+}
+
+/*USER   SIDE*/
+
+.user_side{
+    width: 45vw;
+    min-width: 50em;
+    background-color: #15202B;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.user_side .small_logo, .bouton, h1, h2{
+    padding-left: 30px;
+}
+
+.user_side, h1, h2{
+    margin-bottom: 1em;
+}
+
+
+.user_side .small_logo{
+    width: 6em;
+    height: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+
+.user_side .bouton{
+    display: flex;
+    flex-direction: column;
+}
+
+.bouton .first{
+    margin-bottom: 2em;
+    max-width: 18em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    font-family: 'Open Sans', 'Medium 500';
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/*CONNECTION*/
+#connect{
+    color: rgb(42, 174, 230);
+    border-radius: 25px;
+    background-color: #15202B;
+    border: 1px solid #8f8f8f;
+}
+
+.user_side #connect:hover{
+    background-color: #162D3F;
+}
+
+/*INSCRIPTION*/
+
+.user_side #inscire{
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+    background-color: rgb(42, 174, 230);
+    border: 1px solid rgb(42, 174, 230);
+}
+
+.user_side #inscire:hover{
+    background-color: #1A8CD8;
+    border: 1px solid #1A8CD8;
+}
+
+/*MODAL*/
+
+/*MODAL INCRIPTION*/
+
+
+.modal .form h3{
+    text-align: center;
+    color: white;
+    margin: 10px 0px 20px;
+
+}
+
+.modal .form .form_element{
+    margin: 15px 0px;
+}
+
+.modal .form .form_element label{
+    font-size: 14px;
+    color: white;
+    font-family: 'Open Sans', 'Medium 500';
+}
+
+input[type="text"],
+input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgba(70, 70, 70, 0.28);
+    background-color: #15202B;
+    border-radius: 5px;
+    color: white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #1A8CD8;
+}
+
+.modal .form .form_element button{
+    font-family: 'Open Sans', 'Medium 500';
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #15202B;
+    border-radius: 10px;
+}
+
+.modal .form .form_element button:hover{
+    background-color: #e7e7e7;
+}
+
+/*FOOTER*/
+footer{
+    height: 6vh;
+    flex-shrink: 0;
+    background-color:#15202B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*MEDIA*/
+
+@media screen and (max-width: 1000px) {
+    .container{
+        flex-direction: column-reverse;
+    }
+
+    .user_side .small_logo, .bouton, h1, h2{
+        padding-left: 50px;
+    }
+    
+    h1{
+        font-size: 3em;
+    }
+
+    h2{
+        font-size: 1.8em;
+    }
+
+    .user_side{
+        min-width: 23em;
+        height: 100%;
+        width: 100%;
+    }
+
+    .logo_side{
+        width: 100%;
+    }
+}
