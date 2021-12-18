@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="home_styles.css">
-    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="../views/css/home_styles.css">
+    <link rel="stylesheet" href="../views/css/modal.css">
 </head>
 <body>
 
@@ -14,13 +14,13 @@
             <div class="sidebar">
                 <ul>
                     <li id="small_logo">
-                        <img class="small_logo" src="img/ventilateurBLANC.png">
+                        <img class="small_logo" src="../assets/ventilateurBLANC.png">
                     </li>
 
                     <li>
                         <button>
                             <i class='bx bx-home-smile' style='color:#ffffff'  ></i>
-                            <span class="item_label">Acceuil</span>
+                            <span class="item_label">Accueil</span>
                         </button>
                     </li>
                     <li>
@@ -28,7 +28,6 @@
                             <i class='bx bx-user' style='color:#ffffff'  ></i>
                             <span class="item_label">Profil</span>
                         </button>
-
                     </li>
                     <li>
                         <button data-modal-target="#modal_ventiler" id="ventiler">
@@ -37,23 +36,25 @@
                         </button>
                     </li>
                     <li id="deco">
-                        <button>
-                            <i class='bx bx-door-open' style='color:#ffffff'  ></i>
-                            <span class="item_label">Deconnection</span>
-                        </button>
+                        <a href="index.php?controller=logout">
+                            <button>
+                                <i class='bx bx-door-open' style='color:#ffffff'  ></i>
+                                <span class="item_label">Deconnection</span>
+                            </button>
+                        </a>
                     </li>
                 </ul>
             </div>
 
             <div class="main">
                 <div class="main_header">
-                    Acceuil
+                    Accueil
                     <i class='bx bx-cross' style='color:#ffffff'  ></i>
                 </div>
 
                 <div class="item">
                     <div class="small_logo">
-                        <img  src="img/pp.jpeg">
+                        <img  src="../views/img/pp.jpeg">
                     </div>
                     <div class="item_wrapper">
                         <span class="username">Username</span>
@@ -61,7 +62,7 @@
                                testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
                                 dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
                             </span>
-                        <img class="content_item" src="img/fans.jpg">
+                        <img class="content_item" src="../views/img/fans.jpg">
                     </div>
 
                 </div>
@@ -69,28 +70,28 @@
 
                 <div class="item">
                     <div class="small_logo">
-                        <img  src="img/pp.jpeg">
+                        <img  src="../views/img/pp.jpeg">
                     </div>                    <div class="item_wrapper">
                         <span class="username">Username</span>
                         <span class="description">
                                testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
                                 dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
                             </span>
-                        <img class="content_item" src="img/3d.jpg">
+                        <img class="content_item" src="../views/img/3d.jpg">
                     </div>
 
                 </div>
 
                 <div class="item">
                     <div class="small_logo">
-                        <img  src="img/pp.jpeg">
+                        <img  src="../views/img/pp.jpeg">
                     </div>                    <div class="item_wrapper">
                         <span class="username">Username</span>
                         <span class="description">
                                testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
                                 dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
                             </span>
-                        <img class="content_item" src="img/aestetic.jpg">
+                        <img class="content_item" src="../views/img/aestetic.jpg">
                     </div>
 
                 </div>
@@ -176,7 +177,7 @@
 
 
         <div id="overlay" ></div>
-        <script defer src="script.js"></script>
+        <script defer src="/views/js/script.js"></script>
 
 </body>
 </html>
