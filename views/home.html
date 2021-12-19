@@ -105,7 +105,7 @@
 
         <div class="modal" id="modal_ventiler">
             <button data-close-button class="close-button">&times;</button>
-            <form method="post" action="index.php?controller=addContent" name="add_content"  class="upload_content">
+            <form method="post" action="index.php?controller=addContent" name="add_content" enctype="multipart/form-data" class="upload_content">
                 <div class="text_decription">
                     <textarea name="description" id="description" placeholder="Quoi de neuf ?"></textarea>
                 </div>
@@ -119,13 +119,13 @@
                             <i class='bx bx-upload' style='color:#2aaee6'  ></i>
                         </label>
                         <input name="postImage" type="file" id="import_file">
-                        <button id="trash" class="style_button">
+                        <button type="button" id="trash" class="style_button">
                             <i class='bx bx-trash' style='color:#2aaee6'></i>
                         </button>
                     </div>
                 </div>
                 <div class="wrapper">
-                    <button class="upload">
+                    <button name="submit" class="upload">
                         <i class='bx bxs-party'></i>
                         Ventiler
                     </button>
