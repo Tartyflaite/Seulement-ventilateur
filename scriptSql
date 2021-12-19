@@ -1,10 +1,10 @@
 SET FOREIGN_KEY_CHECKS=0; -- to disable them
 
 
-drop table user;
+drop table fans;
 drop table content;
 
-create table user(
+create table fans(
     userId integer auto_increment,
     username varchar(255) unique,
     password varchar(255),
@@ -18,5 +18,5 @@ create table content(
     imageName varchar(255),
     userId INTEGER,
     primary key (contentId),
-    foreign key (userId) references user (userId)
+    foreign key (userId) references fans (userId)
 );
