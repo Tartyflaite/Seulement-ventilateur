@@ -50,6 +50,7 @@ const previewImgPP = document.querySelector(".pp_preview_pp")
 
 trashDelete.addEventListener("click", () =>{
     previewImg.setAttribute("src", "")
+    importFile.value = null;
     return;
 })
 
