@@ -1,18 +1,22 @@
 SET FOREIGN_KEY_CHECKS=0; -- to disable them
 
+
+drop table user;
+drop table content;
+
 create table user(
-    userId integer,
+    userId integer auto_increment,
     username varchar(255) unique,
     password varchar(255),
-    profilPictureName varchar(255)
+    profilPictureName varchar(255),
     primary key (userId)
 );
 
 create table content(
-    contentId interger,
+    contentId integer auto_increment,
     description varchar(255),
     imageName varchar(255),
     userId INTEGER,
-    primary key (contentId)
-    foreign key (userId)
+    primary key (contentId),
+    foreign key (userId) references user (userId)
 );
