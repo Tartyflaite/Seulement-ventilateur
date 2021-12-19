@@ -16,8 +16,8 @@ function feed(): void
     while ($row = $query->fetch($result)) {
         $user_id = $row['userId'];
 
-        $query_username = DB()->prepare("SELECT username, profilPictureName FROM fans WHERE userId = $user_id");
-        $result_user = $query_username->execute();
+        $query_username = DB()->prepare("SELECT username, profilPictureName FROM fans WHERE userId = ?");
+        $result_user = $query_username->execute([$user_id]);
         $user_info = $query_username->fetch($result_user);
 
         $file = get_ventil($row['imageName']);
@@ -33,9 +33,14 @@ function feed(): void
                                     echo '</span>
                     <span class="description">';
                                         echo $description;
-                                    echo '</span>
-                    <img class="content_item" src=';echo $file.' '; echo 'alt="content_img">
-                </div>
+                                    echo '</span>';
+                                    if($file != ''){
+                                        echo '<img class="content_item" src=';echo '"'.$file.'" '; echo 'alt="content_img">';
+                                    }
+                                    else {
+                                        echo '<br>';
+                                    }
+                echo '</div>
             </div>';
 
     }
@@ -65,6 +70,8 @@ function get_asset($string): void {
 }
 
 function get_ventil($ventil): string {
+    if($ventil == '')
+        return '';
     return "./ImageVentilo/$ventil";
 }
 
