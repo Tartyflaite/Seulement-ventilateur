@@ -116,7 +116,7 @@
 
         <div class="modal" id="modal_profil">
             <button data-close-button class="close-button">&times;</button>
-            <form method="post" action="index.php?controller=update" name="update_profile" class="profil_item">
+            <form method="post" action="index.php?controller=update" enctype="multipart/form-data" class="profil_item">
                 Editeur de profil
 
                 <input type="text" name="username" placeholder="nouveau pseudo">
@@ -126,7 +126,7 @@
                         <label for="import_pp" class="style_button">
                             <i class='bx bx-upload' style='color:#2aaee6'  ></i>
                         </label>
-                        <input type="file" name="profil_picture" id="import_pp">
+                        <input type="file" name="profile_picture" id="import_pp" />
                         <span id="text_label">Nouvelle photo de profil</span>
                     </div>
                     <div class="preview" id="preview_pp">
@@ -134,7 +134,7 @@
                     </div>
                 </div>
                 <div class="wrapper_update">
-                    <button>
+                    <button type="submit" name="submit" value="Upload">
                         <i class='bx bx-up-arrow-alt' style='color:#142f5d'  ></i>
                         Update
                     </button>
