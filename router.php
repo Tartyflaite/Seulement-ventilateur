@@ -8,6 +8,39 @@
     $config = require_once('config.php');
     $conn = null;
 
+function feed(): void
+{
+    $query = DB()->prepare("SELECT * FROM content");
+    $result = $query->execute();
+
+    while ($row = $query->fetch($result)) {
+        $user_id = $row['userId'];
+
+        $query_username = DB()->prepare("SELECT username, profilPictureName FROM fans WHERE userId = $user_id");
+        $result_user = $query_username->execute();
+        $user_info = $query_username->fetch($result_user);
+
+        $file = get_ventil($row['imageName']);
+        $description = $row['description'];
+
+        echo '<div class="item">
+                <div class="small_logo">
+                    <img src="ProfilePicture/';echo $user_info['profilPictureName'].'" '; echo 'alt="user_logo">
+                </div>
+                <div class="item_wrapper">
+                                    <span class="username">';
+                                        echo $user_info['username'];
+                                    echo '</span>
+                    <span class="description">';
+                                        echo $description;
+                                    echo '</span>
+                    <img class="content_item" src=';echo $file.' '; echo 'alt="content_img">
+                </div>
+            </div>';
+
+    }
+}
+
 
 function DB(): PDO {
     global $config;
@@ -29,6 +62,10 @@ function route($controller): string {
 
 function get_asset($string): void {
     echo "../assets/$string";
+}
+
+function get_ventil($ventil): string {
+    return "./ImageVentilo/$ventil";
 }
 
     $controller = $_GET['controller'] ?? 'index';
