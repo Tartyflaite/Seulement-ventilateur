@@ -1,21 +1,23 @@
 <?php
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $query = DB()->prepare("INSERT INTO users VALUES(?,?)");
+    $query = DB()->prepare("INSERT INTO user(userId, username, password, profilPictureName) VALUES(NULL,?,?, 'defaultPP')");
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
     $result = $query->execute([$username, $hashed_password]);
 
 if($result === false){
-    $_SESSION['flash']['error'] = "L'tlisateur ".$username." existe déjà.";
+//    $_SESSION['flash']['error'] = "L'utilisateur ".$username." existe déjà.";
+    $_SESSION['flash']['error'] = "test.";
     $redirect = 'index';
-}
+} else{
+    $_SESSION['flash'] = array();
+    $_SESSION['flash']['success'] = "Inscription réussie.";
 
-    else{
-        $_SESSION['flash'] = array();
-        $_SESSION['flash']['success'] = "Inscription réussie.";
-        $_SESSION['username'] = $username;
-        $redirect = 'home';
-    }
+    $_SESSION['connected'] = true;
+
+    $_SESSION['username'] = $username;
+    $redirect = 'home';
+}
 
 $_POST = array();
 header('Location: /public/index.php?controller='.$redirect);

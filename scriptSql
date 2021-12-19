@@ -1,4 +1,18 @@
-create table users(
-    username varchar(255),
-    password varchar(255)
+SET FOREIGN_KEY_CHECKS=0; -- to disable them
+
+create table user(
+    userId integer,
+    username varchar(255) unique,
+    password varchar(255),
+    profilPictureName varchar(255)
+    primary key (userId)
+);
+
+create table content(
+    contentId interger,
+    description varchar(255),
+    imageName varchar(255),
+    userId INTEGER,
+    primary key (contentId)
+    foreign key (userId)
 );

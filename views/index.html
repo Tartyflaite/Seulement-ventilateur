@@ -55,7 +55,15 @@
                 </div>
 
                 <button data-modal-target="#modal_connection" id="connect" class="first">Se connecter</button>
-                <div class="error"><?php if(isset($_SESSION['flash']['error'])){echo $_SESSION['flash']['error'];}?></div>
+                <div class="error">
+                    <p style="color: red">
+                        <?php
+                        if(isset($_SESSION['flash']['error'])){
+                            echo $_SESSION['flash']['error'];
+                        }
+                        ?>
+                    </p>
+                </div>
 
                 <div class="modal" id="modal_connection">
                     <button data-close-button class="close-button">&times;</button>
