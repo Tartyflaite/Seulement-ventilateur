@@ -2,7 +2,7 @@
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $query = DB()->prepare("SELECT * FROM user WHERE username=?");
+    $query = DB()->prepare("SELECT * FROM fans WHERE username=?");
     $query->execute([$username]);
     $result = $query->fetch(PDO::FETCH_ASSOC);
 
