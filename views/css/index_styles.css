@@ -79,7 +79,7 @@ p{
     flex-direction: column;
 }
 
-.user_side .small_logo, .bouton, h1, h2{
+.user_side .small_logo, .bouton, .error_wrapper, h1, h2{
     padding-left: 30px;
 }
 
@@ -136,6 +136,24 @@ p{
     background-color: #1A8CD8;
     border: 1px solid #1A8CD8;
 }
+
+
+
+
+.user_side .error_wrapper .error{
+    max-width: 450px;
+    margin-right: 2em;
+    border-radius: 5px;
+    border-left: 5px solid #FF92AA;
+    background: #FEECF0;
+    display: flex;
+}
+
+.user_side .error p{
+    color: #cc0f35;
+    margin: 1em 2em;
+}
+
 
 /*MODAL*/
 
@@ -210,10 +228,10 @@ footer{
         flex-direction: column-reverse;
     }
 
-    .user_side .small_logo, .bouton, h1, h2{
+    .user_side .small_logo, .bouton, .error_wrapper, h1, h2{
         padding-left: 50px;
     }
-    
+
     h1{
         font-size: 3em;
     }
@@ -223,7 +241,7 @@ footer{
     }
 
     .user_side{
-        min-width: 23em;
+        min-width: 320px;
         height: 100%;
         width: 100%;
     }
@@ -233,7 +251,9 @@ footer{
     }
 }
 
-.error {
-    color: red;
-    font-style: italic;
+@media screen and (max-width: 370px) {
+    .user_side .small_logo, .bouton, .error_wrapper, h1, h2{
+        padding-left: 5px;
+    }
 }
+

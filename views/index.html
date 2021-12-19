@@ -56,14 +56,7 @@
 
                 <button data-modal-target="#modal_connection" id="connect" class="first">Se connecter</button>
 
-                <div class="error">
-                    <p style="color: red">
-                        <?php
-                            if(isset($_SESSION['flash']['error']))
-                                echo $_SESSION['flash']['error'];
-                        ?>
-                    </p>
-                </div>
+
                 <div class="modal" id="modal_connection">
                     <button data-close-button class="close-button">&times;</button>
 
@@ -87,6 +80,16 @@
                 </div>
             </div>
 
+            <?php if (isset($_SESSION['flash']['error'])){
+                echo '<div class="error_wrapper">
+                        <div class="error">
+                            <p>
+                                '.$_SESSION['flash']['error'].'
+                            </p>
+                        </div>
+                    </div>';
+                }
+            ?>
         </div>
     </div>
     <footer>
