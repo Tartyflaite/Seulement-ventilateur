@@ -5,7 +5,6 @@ if (!isset($_POST['submit'])){
 }
 
 
-
 if (isset($_POST['username']) && $_POST['username'] != ''){
 
     $query = DB()->prepare("update fans set username = ?
@@ -14,7 +13,9 @@ if (isset($_POST['username']) && $_POST['username'] != ''){
 
     if($res){
         $_SESSION['username'] = $_POST['username'];
-        //code erreur
+    }else{
+        $_SESSION['flash']['error'] = 'impossible de changer le pseudo';
+        leaveUpdate();
     }
 }
 
@@ -22,9 +23,9 @@ if(isset($_POST['password']) && $_POST['password'] != ''){
     $query = DB()->prepare("update fans set password = ?
                                     where username = ?");
     $res = $query->execute([password_hash($_POST['password'], PASSWORD_BCRYPT), $_SESSION['username']]);
-    if($res){
-
-        //code erreur
+    if(!$res){
+        $_SESSION['flash']['error'] = 'impossible de changer le pseudo';
+        leaveUpdate();
     }
 }
 
@@ -55,18 +56,29 @@ if(isset($_FILES['profile_picture'])){
 
             if($res){
                 if (!copy($filepath, $newFilepath)) { // Copy the file, returns false if failed
-                    die("Can't move file.");
+                    $_SESSION['flash']['error'] = 'impossible de copier le fichier';
+                    leaveUpdate();
                 }
                 unlink($filepath); // Delete the temp file
+            }else{
+                $_SESSION['flash']['error'] = 'impossible de changer d\'avater';
+                leaveUpdate();
             }
         }
     }
 }
 
-$_POST = array();
-$_FILES = array();
-header('Location: /public/index.php?controller=home');
-exit;
+leaveUpdate();
+
+function leaveUpdate(){
+    $_POST = array();
+    $_FILES = array();
+    header('Location: /public/index.php?controller=home');
+    exit;
+}
+
+
+
 
 
 
