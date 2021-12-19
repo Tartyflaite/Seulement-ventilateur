@@ -52,49 +52,7 @@
                     <i class='bx bx-cross' style='color:#ffffff'  ></i>
                 </div>
 
-                <div class="item">
-                    <div class="small_logo">
-                        <img  src="../views/img/pp.jpeg">
-                    </div>
-                    <div class="item_wrapper">
-                        <span class="username">Username</span>
-                        <span class="description">
-                               testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
-                                dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
-                            </span>
-                        <img class="content_item" src="../views/img/fans.jpg">
-                    </div>
-
-                </div>
-
-
-                <div class="item">
-                    <div class="small_logo">
-                        <img  src="../views/img/pp.jpeg">
-                    </div>                    <div class="item_wrapper">
-                        <span class="username">Username</span>
-                        <span class="description">
-                               testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
-                                dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
-                            </span>
-                        <img class="content_item" src="../views/img/3d.jpg">
-                    </div>
-
-                </div>
-
-                <div class="item">
-                    <div class="small_logo">
-                        <img  src="../views/img/pp.jpeg">
-                    </div>                    <div class="item_wrapper">
-                        <span class="username">Username</span>
-                        <span class="description">
-                               testdsadddddddd sdadasdsa dsadsadasasdddddddddddddddddddddd
-                                dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadsaaaaaaaa dsaaaaaaaaaaaaaaaaaaa dsaaaaaaak l j f kljasfkdslj dskj
-                            </span>
-                        <img class="content_item" src="../views/img/aestetic.jpg">
-                    </div>
-
-                </div>
+                <?php feed(); ?>
 
             </div>
 
@@ -147,9 +105,9 @@
 
         <div class="modal" id="modal_ventiler">
             <button data-close-button class="close-button">&times;</button>
-            <div class="upload_content">
+            <form method="post" action="index.php?controller=addContent" name="add_content"  class="upload_content">
                 <div class="text_decription">
-                    <textarea id="description" placeholder="Quoi de neuf ?"></textarea>
+                    <textarea name="description" id="description" placeholder="Quoi de neuf ?"></textarea>
                 </div>
 
                 <div class="img_upload">
@@ -160,7 +118,7 @@
                         <label for="import_file" class="style_button">
                             <i class='bx bx-upload' style='color:#2aaee6'  ></i>
                         </label>
-                        <input type="file" id="import_file">
+                        <input name="postImage" type="file" id="import_file">
                         <button id="trash" class="style_button">
                             <i class='bx bx-trash' style='color:#2aaee6'></i>
                         </button>
@@ -172,7 +130,7 @@
                         Ventiler
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
 
 
