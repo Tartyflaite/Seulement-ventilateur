@@ -189,7 +189,6 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .profil_item input[type="text"]{
@@ -209,6 +208,8 @@ input[type="text"]:focus{
 }
 
 .profil_item .profil_picture{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -237,6 +238,7 @@ input[type="text"]:focus{
 }
 
 .wrapper_update{
+
     width: 100%;
     display: flex;
     justify-content: center;

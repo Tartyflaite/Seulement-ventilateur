@@ -116,31 +116,32 @@
 
         <div class="modal" id="modal_profil">
             <button data-close-button class="close-button">&times;</button>
-            <div class="profil_item">
+            <form method="post" action="index.php?controller=update" name="update_profile" class="profil_item">
                 Editeur de profil
 
-                <input type="text" placeholder="nouveau pseudo">
-                <input type="text" placeholder="nouveau mot de passe">
+                <input type="text" name="username" placeholder="nouveau pseudo">
+                <input type="text" name="password" placeholder="nouveau mot de passe">
                 <div class="profil_picture">
                     <div class="dialog">
                         <label for="import_pp" class="style_button">
                             <i class='bx bx-upload' style='color:#2aaee6'  ></i>
                         </label>
-                        <input type="file" id="import_pp">
+                        <input type="file" name="profil_picture" id="import_pp">
                         <span id="text_label">Nouvelle photo de profil</span>
                     </div>
                     <div class="preview" id="preview_pp">
                         <img src="" class="pp_preview_pp">
                     </div>
                 </div>
-            </div>
+                <div class="wrapper_update">
+                    <button>
+                        <i class='bx bx-up-arrow-alt' style='color:#142f5d'  ></i>
+                        Update
+                    </button>
+                </div>
+            </form>
 
-            <div class="wrapper_update">
-                <button>
-                    <i class='bx bx-up-arrow-alt' style='color:#142f5d'  ></i>
-                    Update
-                </button>
-            </div>
+
 
         </div>
 

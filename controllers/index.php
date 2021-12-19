@@ -4,4 +4,5 @@ if(isset($_SESSION['connected']) and $_SESSION['connected'] == true){
 }
 else{
     include(ROOT . '/views/index.html');
+    $_SESSION['flash']['error'] = null;
 }

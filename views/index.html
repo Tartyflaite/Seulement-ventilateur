@@ -55,20 +55,18 @@
                 </div>
 
                 <button data-modal-target="#modal_connection" id="connect" class="first">Se connecter</button>
+
                 <div class="error">
                     <p style="color: red">
                         <?php
-                        if(isset($_SESSION['flash']['error'])){
                             echo $_SESSION['flash']['error'];
-                        }
                         ?>
                     </p>
                 </div>
-
                 <div class="modal" id="modal_connection">
                     <button data-close-button class="close-button">&times;</button>
 
-                    <form method="post" action="index.php?controller=process_log" name="login-form" class="form">
+                    <form method="post" action="index.php?controller=login" name="login-form" class="form">
                         <h3>Connectez vous</h3>
 
                         <div class="form_element">

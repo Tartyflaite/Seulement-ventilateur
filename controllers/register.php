@@ -6,8 +6,7 @@
     $result = $query->execute([$username, $hashed_password]);
 
 if($result === false){
-//    $_SESSION['flash']['error'] = "L'utilisateur ".$username." existe déjà.";
-    $_SESSION['flash']['error'] = "test.";
+    $_SESSION['flash']['error'] = "L'utilisateur ".$username." existe déjà.";
     $redirect = 'index';
 } else{
     $_SESSION['flash'] = array();
