@@ -59,7 +59,8 @@
                 <div class="error">
                     <p style="color: red">
                         <?php
-                            echo $_SESSION['flash']['error'];
+                            if(isset($_SESSION['flash']['error']))
+                                echo $_SESSION['flash']['error'];
                         ?>
                     </p>
                 </div>
