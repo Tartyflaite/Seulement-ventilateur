@@ -47,7 +47,18 @@
             </div>
 
             <div class="main">
+                <?php if (isset($_SESSION['flash']['error'])){
+                    echo '<div class="error">
+                            <p>
+                                '.$_SESSION['flash']['error'].'
+                            </p>
+                         </div>';
+                    }
+                ?>
+
+
                 <div class="main_header">
+
                     Accueil
                     <i class='bx bx-cross' style='color:#ffffff'  ></i>
                 </div>
@@ -68,6 +79,7 @@
                         <li>Guillaume De La Grandière</li>
                     </ul>
                 </div>
+
             </div>
 
         </div>
