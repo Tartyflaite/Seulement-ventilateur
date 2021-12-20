@@ -8,44 +8,7 @@
     $config = require_once('config.php');
     $conn = null;
 
-function feed(): void
-{
-    $query = DB()->prepare("SELECT * FROM content");
-    $result = $query->execute();
-
-    while ($row = $query->fetch($result)) {
-        $user_id = $row['userId'];
-
-        $query_username = DB()->prepare("SELECT username, profilPictureName FROM fans WHERE userId = ?");
-        $result_user = $query_username->execute([$user_id]);
-        $user_info = $query_username->fetch($result_user);
-
-        $file = get_ventil($row['imageName']);
-        $description = $row['description'];
-
-        echo '<div class="item">
-                <div class="small_logo">
-                    <img src="ProfilePicture/';echo $user_info['profilPictureName'].'" '; echo 'alt="user_logo">
-                </div>
-                <div class="item_wrapper">
-                                    <span class="username">';
-                                        echo $user_info['username'];
-                                    echo '</span>
-                    <span class="description">';
-                                        echo $description;
-                                    echo '</span>';
-                                    if($file != ''){
-                                        echo '<img class="content_item" src=';echo '"'.$file.'" '; echo 'alt="content_img">';
-                                    }
-                                    else {
-                                        echo '<br>';
-                                    }
-                echo '</div>
-            </div>';
-
-    }
-}
-
+    require_once("feed.php");
 
 function DB(): PDO {
     global $config;
