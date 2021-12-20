@@ -127,20 +127,21 @@ body{
 
 .container .main .item .small_logo img{
     margin: 0 0.5em;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 
 .container .main .item .item_wrapper{
     padding: 0.1em 1em 0.1em 0em;
     font-size: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .container .main .item .item_wrapper .username{
-    font-size: 13px;
+    font-size: 18px;
     width: 100%;
     margin-bottom: 0.1em;
 }
@@ -157,7 +158,28 @@ body{
 .container .main .item .item_wrapper .description{
     width: 100%;
     word-wrap: break-word;
+    font-size: 15px;
     font-family: 'Open Sans', 'Medium 500';
+}
+
+.container .main .item .item_wrapper .delete_wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.2em;
+}
+
+.container .main .item .item_wrapper .delete_wrapper .delete_button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: transparent;
+    font-size: 1rem;
+}
+
+.container .main .item .item_wrapper .delete_wrapper .delete_button:hover{
+    background: #192734;
 }
 
 
@@ -414,8 +436,3 @@ input[type="text"]:focus{
         width: 60px;
     }
 }
-
-
-
-
-

@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_POST['submit'])){
-    exit;
+    leaveScript("Passez par l'editeur de profil");
 }
 
 if (isset($_POST['username']) && $_POST['username'] != ''){
@@ -10,7 +10,7 @@ if (isset($_POST['username']) && $_POST['username'] != ''){
     $res = $query->execute([$_POST['username'], $_SESSION['username']]);
 
     if($res) $_SESSION['username'] = $_POST['username'];
-    else leaveUpdate('impossible de changer le pseudo');
+    else leaveScript('impossible de changer le pseudo');
 
 }
 
@@ -19,7 +19,7 @@ if(isset($_POST['password']) && $_POST['password'] != ''){
                                     where username = ?");
     $res = $query->execute([password_hash($_POST['password'], PASSWORD_BCRYPT), $_SESSION['username']]);
 
-    if(!$res) leaveUpdate('impossible de changer le pseudo');
+    if(!$res) leaveScript('impossible de changer le pseudo');
 
 }
 
@@ -47,23 +47,14 @@ if(isset($_FILES['profile_picture'])){
 
             $res = $query->execute([$filename.'.'.$extension, $_SESSION['username']]);
 
-            if(!$res) leaveUpdate('impossible de changer d\'avater');
+            if(!$res) leaveScript('impossible de changer d\'avater');
 
-            if (!copy($filepath, $newFilepath)) leaveUpdate('impossible de copier le fichier');
+            if (!copy($filepath, $newFilepath)) leaveScript('impossible de copier le fichier');
 
             unlink($filepath); // Delete the temp file
 
-        }
+        }else leaveScript("Mauvais format de fichier");
     }
 }
 
-leaveUpdate(null);
-
-function leaveUpdate($error){
-    $_SESSION['flash']['error'] = $error;
-
-    $_POST = array();
-    $_FILES = array();
-    header('Location: /public/index.php?controller=home');
-    exit;
-}
+leaveScript(null);

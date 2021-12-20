@@ -1,0 +1,23 @@
+<div class="item">
+    <div class="small_logo">
+        <img src="<?php echo 'ProfilePicture/'.$user_info['profilPictureName'];?>" alt="user_logo">
+    </div>
+    <div class="item_wrapper">
+        <span class="username"><?php echo $user_info['username'];?></span>
+        <span class="description"><?php echo $description;?></span>
+        <img class="content_item" src="<?php if($file != ''){echo $file;} ?>">
+
+
+        <?php
+            if($_SESSION['username'] == $user_info['username'] || $_SESSION['username'] == 'admin'){
+                echo '<div class="delete_wrapper">
+                        <form method="post" action="index.php?controller=deleteContent" name="form">
+                            <button type="submit" name="submit" value="'.$row['contentId'].'" class="delete_button">
+                                <i class="bx bx-trash" style="color:#ea4040" ></i>
+                            </button>
+                        </form>
+                </div>';
+            }
+        ?>
+    </div>
+</div>
