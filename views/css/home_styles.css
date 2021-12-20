@@ -268,7 +268,7 @@ body{
     flex-direction: column;
 }
 
-.profil_item input[type="text"]{
+.profil_item input[type="text"], input[type="password"]{
     margin: 1em 0;
     display: block;
     width: 100%;
@@ -280,7 +280,7 @@ body{
     color: white;
 }
 
-input[type="text"]:focus{
+input[type="text"], input[type="password"]:focus{
     border-color: #1A8CD8;
 }
 
