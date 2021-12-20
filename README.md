@@ -1,4 +1,4 @@
-<img src="./assets/Seulement_Ventilateur_-_transparent.png" width="200" />
+<img src="./assets/Seulement_Ventilateur_-_transparent.png" />
 A completely original and innovative social media !
 
 <h2 style="color: #45AFFF">Install and setup</h2>
