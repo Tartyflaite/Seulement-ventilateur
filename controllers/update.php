@@ -4,29 +4,23 @@ if (!isset($_POST['submit'])){
     exit;
 }
 
-
 if (isset($_POST['username']) && $_POST['username'] != ''){
-
     $query = DB()->prepare("update fans set username = ?
                                     where username = ?");
     $res = $query->execute([$_POST['username'], $_SESSION['username']]);
 
-    if($res){
-        $_SESSION['username'] = $_POST['username'];
-    }else{
-        $_SESSION['flash']['error'] = 'impossible de changer le pseudo';
-        leaveUpdate();
-    }
+    if($res) $_SESSION['username'] = $_POST['username'];
+    else leaveUpdate('impossible de changer le pseudo');
+
 }
 
 if(isset($_POST['password']) && $_POST['password'] != ''){
     $query = DB()->prepare("update fans set password = ?
                                     where username = ?");
     $res = $query->execute([password_hash($_POST['password'], PASSWORD_BCRYPT), $_SESSION['username']]);
-    if(!$res){
-        $_SESSION['flash']['error'] = 'impossible de changer le pseudo';
-        leaveUpdate();
-    }
+
+    if(!$res) leaveUpdate('impossible de changer le pseudo');
+
 }
 
 if(isset($_FILES['profile_picture'])){
@@ -49,38 +43,27 @@ if(isset($_FILES['profile_picture'])){
             $targetDirectory = "..\public\ProfilePicture";
             $newFilepath = $targetDirectory . "/" . $filename . "." . $extension;
 
-            $query = DB()->prepare("update fans set profilPictureName = ?
-                                   where username = ?");
+            $query = DB()->prepare("update fans set profilPictureName = ? where username = ?");
 
             $res = $query->execute([$filename.'.'.$extension, $_SESSION['username']]);
 
-            if($res){
-                if (!copy($filepath, $newFilepath)) { // Copy the file, returns false if failed
-                    $_SESSION['flash']['error'] = 'impossible de copier le fichier';
-                    leaveUpdate();
-                }
-                unlink($filepath); // Delete the temp file
-            }else{
-                $_SESSION['flash']['error'] = 'impossible de changer d\'avater';
-                leaveUpdate();
-            }
+            if(!$res) leaveUpdate('impossible de changer d\'avater');
+
+            if (!copy($filepath, $newFilepath)) leaveUpdate('impossible de copier le fichier');
+
+            unlink($filepath); // Delete the temp file
+
         }
     }
 }
 
-leaveUpdate();
+leaveUpdate(null);
 
-function leaveUpdate(){
+function leaveUpdate($error){
+    $_SESSION['flash']['error'] = $error;
+
     $_POST = array();
     $_FILES = array();
     header('Location: /public/index.php?controller=home');
     exit;
 }
-
-
-
-
-
-
-
-

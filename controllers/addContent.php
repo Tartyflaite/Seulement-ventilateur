@@ -1,54 +1,67 @@
 <?php
 
-    if(isset($_POST['submit'])){
-        $query_user = DB()->prepare("SELECT userId FROM fans WHERE username = ?");
-        $query_user->execute([$_SESSION['username']]);
-        $user_id = $query_user->fetch()['userId'];
-
-        $description = $_POST['description'] ?? '';
-
-        if(isset($_FILES['postImage'])){
-            $filepath = $_FILES['postImage']['tmp_name'];
-            $fileSize = filesize($filepath);
-            $fileinfo = finfo_open(FILEINFO_MIME_TYPE);
-            $filetype = finfo_file($fileinfo, $filepath);
-
-            if (!($fileSize === 0)) {
-                $allowedTypes = [
-                    'image/png' => 'png',
-                    'image/jpeg' => 'jpg'
-                ];
-
-                if (in_array($filetype, array_keys($allowedTypes))) {
-
-                    $filename = uniqid('ventil_');
-                    $extension = $allowedTypes[$filetype];
-                    $targetDirectory = ".\ImageVentilo";
-                    $newFilepath = $targetDirectory . "/" . $filename . "." . $extension;
-
-                    $query = DB()->prepare("INSERT INTO content (imageName, description, userId) VALUES(?,?,?)");
-
-                    $res = $query->execute([$filename.'.'.$extension, $description, $user_id]);
+if(!isset($_POST['submit'])) leaveAddContent("Accedez au menu d'upload svp");
 
 
-                    if($res){
-                        if (!copy($filepath, $newFilepath)) { // Copy the file, returns false if failed
-                            $_SESSION['flash']['error'] = "L'image n'a pas pu être upload.";
-                            header( 'Location: /public/index.php?controller=home' );
-                            exit;
-                        }
-                        unlink($filepath); // Delete the temp file
-                    }
-                }
-            }
-        }
+$description = $_POST['description'];
 
-        else{
-            $query = DB()->prepare("INSERT INTO content (imageName, description, userId) VALUES(?,?,?)");
-            $res = $query->execute(['', $description, $user_id]);
+$filename = null;
+$extension = null;
+$newFilepath = null;
+
+if(isset($_FILES['postImage'])){
+    $filepath = $_FILES['postImage']['tmp_name'];
+    $fileSize = filesize($filepath);
+    $fileinfo = finfo_open(FILEINFO_MIME_TYPE);
+    $filetype = finfo_file($fileinfo, $filepath);
+    if (!($fileSize === 0)) {
+        $allowedTypes = [
+            'image/png' => 'png',
+            'image/jpeg' => 'jpg'
+        ];
+        if (in_array($filetype, array_keys($allowedTypes))) {
+
+            $filename = uniqid('ventil_');
+            $extension = $allowedTypes[$filetype];
+            $targetDirectory = ".\ImageVentilo";
+            $newFilepath = $targetDirectory . "/" . $filename . "." . $extension;
         }
     }
+}
 
-$_FILES = array();
-header( 'Location: /public/index.php?controller=home' );
-exit;
+$query_user = DB()->prepare("SELECT userId FROM fans WHERE username = ?");
+$query_user->execute([$_SESSION['username']]);
+$user_id = $query_user->fetch()['userId'];
+
+
+if($filename == null && $description == '') leaveAddContent("Veuillez publiez du contenu");
+
+
+$query = DB()->prepare("INSERT INTO content (imageName, description, userId) VALUES(?,?,?)");
+
+if($filename != null){
+
+    $res = $query->execute([$filename.'.'.$extension, $description, $user_id]);
+
+    if(!$res) leaveAddContent("Requête SQL impossible.");
+
+
+    if (!copy($filepath, $newFilepath)) leaveAddContent("L'image n'a pas pu être upload.");
+
+    unlink($filepath); // Delete the temp file
+}else{
+    $res = $query->execute(['', $description, $user_id]);
+
+    if(!$res) leaveAddContent("L'image n'a pas pu être upload.");
+}
+
+
+leaveAddContent(null);
+
+function leaveAddContent($error){
+    $_SESSION['flash']['error'] = $error;
+    $_POST = array();
+    $_FILES = array();
+    header('Location: /public/index.php?controller=home');
+    exit;
+}
