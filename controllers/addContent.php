@@ -21,10 +21,10 @@ if(isset($_FILES['postImage'])){
         ];
         if (in_array($filetype, array_keys($allowedTypes))) {
 
-            $filename = uniqid('ventil_');
             $extension = $allowedTypes[$filetype];
+            $filename = uniqid('ventil_').'.'.$extension;
             $targetDirectory = ".\ImageVentilo";
-            $newFilepath = $targetDirectory . "/" . $filename . "." . $extension;
+            $newFilepath = $targetDirectory . "/" . $filename;
         }
         else leaveScript("Mauvais format de fichier");
     }
@@ -42,7 +42,7 @@ $query = DB()->prepare("INSERT INTO content (imageName, description, userId) VAL
 
 if($filename != null){
 
-    $res = $query->execute([$filename.'.'.$extension, $description, $user_id]);
+    $res = $query->execute([$filename, $description, $user_id]);
 
     if(!$res) leaveScript("Requête SQL impossible.");
 

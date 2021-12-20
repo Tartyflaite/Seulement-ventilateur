@@ -1,14 +1,20 @@
 <?php
-    if(!isset($_SESSION['started'])){
-        session_start();
-        $_SESSION['started'] = true;
-    }
+if(!isset($_SESSION['started'])){
+    session_start();
+    $_SESSION['started'] = true;
+}
 
-    const ROOT = __DIR__;
-    $config = require_once('config.php');
-    $conn = null;
+if (!file_exists('ImageVentilo')) {
+    mkdir('ImageVentilo', 0777, true);
+}
 
-    require_once("feed.php");
+const ROOT = __DIR__;
+$config = require_once('config.php');
+$conn = null;
+
+require_once("feed.php");
+require_once("load_account_info.php");
+
 
 function DB(): PDO {
     global $config;
@@ -23,6 +29,7 @@ function DB(): PDO {
         exit("Error: " . $e->getMessage());
     }
 }
+
 
 function route($controller): string {
     return "index.php?controller=$controller";
@@ -47,12 +54,12 @@ function leaveScript($error){
     exit;
 }
 
-    $controller = $_GET['controller'] ?? 'index';
+$controller = $_GET['controller'] ?? 'index';
 
-    if(!file_exists(ROOT.'\controllers\\'.$controller.'.php')){
-        header("HTTP/1.1 404 Not Found");
-        exit;
-    }
+if(!file_exists(ROOT.'\controllers\\'.$controller.'.php')){
+    header("HTTP/1.1 404 Not Found");
+    exit;
+}
 
 
-    require_once('controllers\\'.$controller.'.php');
+require_once('controllers\\'.$controller.'.php');

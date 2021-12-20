@@ -19,19 +19,29 @@ if(isset($_FILES['profile_picture'])){
         ];
 
         if (in_array($filetype, array_keys($allowedTypes))) {
-
-            $filename = uniqid('pp_');
             $extension = $allowedTypes[$filetype];
+            $filename = uniqid('pp_').'.'.$extension;
             $targetDirectory = "..\public\ProfilePicture";
-            $newFilepath = $targetDirectory . "/" . $filename . "." . $extension;
+            $newFilepath = $targetDirectory . "/" . $filename;
+
+            $imageNameQuery = DB()->prepare("select profilPictureName from fans where username = ?");
+            $imageResult = $imageNameQuery->execute([$_SESSION['username']]);
+            if(!$imageResult)
+                leaveScript('impossible de recuperer le contenu (sql error)');
+
+            $imageName = $imageNameQuery->fetch();
+
 
             $query = DB()->prepare("update fans set profilPictureName = ? where username = ?");
 
-            $res = $query->execute([$filename.'.'.$extension, $_SESSION['username']]);
+            $res = $query->execute([$filename, $_SESSION['username']]);
 
             if(!$res) leaveScript('impossible de changer d\'avater');
 
             if (!copy($filepath, $newFilepath)) leaveScript('impossible de copier le fichier');
+
+            if($imageName['imageName'] != 'defaultPP.png')
+                unlink('ProfilePicture/'.$imageName['imageName']);
 
             unlink($filepath); // Delete the temp file
 
