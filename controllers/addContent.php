@@ -14,7 +14,7 @@ if(isset($_FILES['postImage'])){
     $fileSize = filesize($filepath);
     $fileinfo = finfo_open(FILEINFO_MIME_TYPE);
     $filetype = finfo_file($fileinfo, $filepath);
-    if (!($fileSize === 0)) {
+    if (!($fileSize == 0)) {
         $allowedTypes = [
             'image/png' => 'png',
             'image/jpeg' => 'jpg'
