@@ -455,6 +455,10 @@ input[type="text"], input[type="password"]:focus{
 
     }
 
+    #small_logo{
+        margin-bottom: 2em  ;
+    }
+
     .item_label, .account_username{
         display: none;
     }
