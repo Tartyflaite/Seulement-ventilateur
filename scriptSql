@@ -1,8 +1,7 @@
 SET FOREIGN_KEY_CHECKS=0; -- to disable them
 
-
-drop table fans;
 drop table content;
+drop table fans;
 
 create table fans(
     userId integer auto_increment,

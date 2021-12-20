@@ -15,6 +15,6 @@ function feed(): void
         $file = get_ventil($row['imageName']);
         $description = $row['description'];
 
-        include("views/feedTemplate.html");
+        include("views/feed.html");
     }
 }

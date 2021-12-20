@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_POST['submit'])) leaveAddContent("Accedez au menu d'upload svp");
+if(!isset($_POST['submit'])) leaveScript("Accedez au menu d'upload svp");
 
 
 $description = $_POST['description'];
@@ -14,7 +14,7 @@ if(isset($_FILES['postImage'])){
     $fileSize = filesize($filepath);
     $fileinfo = finfo_open(FILEINFO_MIME_TYPE);
     $filetype = finfo_file($fileinfo, $filepath);
-    if (!($fileSize === 0)) {
+    if (!($fileSize == 0)) {
         $allowedTypes = [
             'image/png' => 'png',
             'image/jpeg' => 'jpg'
@@ -26,6 +26,7 @@ if(isset($_FILES['postImage'])){
             $targetDirectory = ".\ImageVentilo";
             $newFilepath = $targetDirectory . "/" . $filename . "." . $extension;
         }
+        else leaveScript("Mauvais format de fichier");
     }
 }
 
@@ -34,7 +35,7 @@ $query_user->execute([$_SESSION['username']]);
 $user_id = $query_user->fetch()['userId'];
 
 
-if($filename == null && $description == '') leaveAddContent("Veuillez publiez du contenu");
+if($filename == null && $description == '') leaveScript("Veuillez publiez du contenu");
 
 
 $query = DB()->prepare("INSERT INTO content (imageName, description, userId) VALUES(?,?,?)");
@@ -43,25 +44,17 @@ if($filename != null){
 
     $res = $query->execute([$filename.'.'.$extension, $description, $user_id]);
 
-    if(!$res) leaveAddContent("Requête SQL impossible.");
+    if(!$res) leaveScript("Requête SQL impossible.");
 
 
-    if (!copy($filepath, $newFilepath)) leaveAddContent("L'image n'a pas pu être upload.");
+    if (!copy($filepath, $newFilepath)) leaveScript("L'image n'a pas pu être upload.");
 
     unlink($filepath); // Delete the temp file
 }else{
     $res = $query->execute(['', $description, $user_id]);
 
-    if(!$res) leaveAddContent("L'image n'a pas pu être upload.");
+    if(!$res) leaveScript("L'image n'a pas pu être upload.");
 }
 
 
-leaveAddContent(null);
-
-function leaveAddContent($error){
-    $_SESSION['flash']['error'] = $error;
-    $_POST = array();
-    $_FILES = array();
-    header('Location: /public/index.php?controller=home');
-    exit;
-}
+leaveScript(null);

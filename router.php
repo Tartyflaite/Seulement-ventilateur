@@ -38,6 +38,15 @@ function get_ventil($ventil): string {
     return "./ImageVentilo/$ventil";
 }
 
+function leaveScript($error){
+    $_SESSION['flash']['error'] = $error;
+
+    $_POST = array();
+    $_FILES = array();
+    header('Location: /public/index.php?controller=home');
+    exit;
+}
+
     $controller = $_GET['controller'] ?? 'index';
 
     if(!file_exists(ROOT.'\controllers\\'.$controller.'.php')){
@@ -47,4 +56,3 @@ function get_ventil($ventil): string {
 
 
     require_once('controllers\\'.$controller.'.php');
-

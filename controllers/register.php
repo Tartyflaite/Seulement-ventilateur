@@ -21,6 +21,3 @@ if($result === false){
 $_POST = array();
 header('Location: /public/index.php?controller='.$redirect);
 exit;
-
-
-
