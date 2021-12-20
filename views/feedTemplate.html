@@ -5,6 +5,6 @@
     <div class="item_wrapper">
         <span class="username"><?php echo $user_info['username'];?></span>
         <span class="description"><?php echo $description;?></span>
-        <img class="content_item" src="<?php echo $file; ?>" alt="user_logo">
+        <img class="content_item" src="<?php if($file != ''){echo $file;} ?>">
     </div>
 </div>
