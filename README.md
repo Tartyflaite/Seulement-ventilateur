@@ -88,13 +88,12 @@ In a query console, create table using the sql script in the projet. First **fan
 
 <h3 style="color: #45AFFF">Front-end</h3>
 <p style="text-align: justify">
-    Ok ... we were very "inspired" by twitter on this one, notice that the web-site is responsive and mobile ready
+    Ok ... we were very "inspired" by twitter on this one, notice that the web-site is responsive and mobile ready.
 </p>
 
 <h3 style="color: #45AFFF">Profil editor</h3>
 <p style="text-align: justify">
     As every human being, we all want to be unique. You will be able to edit your account credentials and profil picture in the profil editor section.
-    (you can update 1 at the time
 </p>
 
 
@@ -123,7 +122,8 @@ In a query console, create table using the sql script in the projet. First **fan
     8. Notice that you can't delete the content uploaded by your first account. <br>
     9. Test the same way as the first time (try breaking it by having two admin users or by uploading wrong format file). <br>
     10. Play with the urls by changing the controller (see Controllers directory in the source code).
-    11. Log out and test the login "Connectez vous" by using the account credentials you made previously. (you still can try to break the site by using non-existent account).
-    12. And you should be done testing our website, you can now take a look at the source code.
+    11. Log out and test the login "Connectez vous" by using the account credentials you made previously. (you still can try to break the site by using non-existent account)<br>
+    12. Feel free to test on your own and explore the website possibility.<br>
+    12. And you should be done testing our website, you can now take a look at the source code.<br>
 </p>
 
