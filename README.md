@@ -145,6 +145,6 @@ create table content(
     10. Play with the urls by changing the controller (see Controllers directory in the source code). <br>
     11. Log out and test the login "Connectez vous" by using the account credentials you made previously. (you still can try to break the site by using non-existent account)<br>
     12. Feel free to test on your own and explore the website possibility.<br>
-    12. And you should be done testing our website, you can now take a look at the source code.<br>
+    13. And you should be done testing our website, you can now take a look at the source code.<br>
 </p>
 
