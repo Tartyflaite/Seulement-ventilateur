@@ -46,8 +46,8 @@ if(isset($_FILES['profile_picture'])){
             if (!copy($filepath, $newFilepath)) leaveScript('impossible de copier le fichier');
 
             // delete the past profile picture unless its the default one
-            if($imageName['imageName'] != 'defaultPP.png')
-                unlink('ProfilePicture/'.$imageName['imageName']);
+            if($imageName['profilPictureName'] != 'defaultPP.png')
+                unlink('ProfilePicture/'.$imageName['profilPictureName']);
 
             unlink($filepath); // Delete the temp file
 
