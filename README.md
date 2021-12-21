@@ -120,7 +120,7 @@ In a query console, create table using the sql script in the projet. First **fan
 <h3 style="color: #45AFFF">Starting</h3>
 <p style="text-align: justify">
     1. Start by typing in the search tab : localhost/public/index.php <br>
-    2. Click on "inscription to make the first account, name it "admin" as it grant the account the power to delete all the content. <br>
+    2. Click on "inscription" to make the first account, name it "admin" as it grant the account the power to delete all the content. <br>
     3. You're now on : http://localhost/public/index.php?controller=home <br>
     4. You can start testing on your own by updating your account on the "profile" section (username, password and profile picture). <br>
     5. Add your own content on the "ventiler" section (must have a least a text or a image file) <br>
@@ -129,6 +129,7 @@ In a query console, create table using the sql script in the projet. First **fan
     8. Notice that you can't delete the content uploaded by your first account. <br>
     9. Test the same way as the first time (try breaking it by having two admin users or by uploading wrong format file). <br>
     10. Play with the urls by changing the controller (see Controllers directory in the source code).
-    11. And you should be done testing our website, you can now take a look to the source code.
+    11. Log out and test the login "Connectez vous" by using the account credentials you made previously. (you still can try to break the site by using non-existent account).
+    12. And you should be done testing our website, you can now take a look at the source code.
 </p>
 
