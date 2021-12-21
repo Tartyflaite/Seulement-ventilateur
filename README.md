@@ -59,10 +59,10 @@ In a query console, create table using the sql script in the projet. First **fan
 <p style="text-align: justify">
     1. Start by typing in the search tab : localhost/public/index.php <br>
     2. Click on "inscription to make the first account, name it "admin" as it grant the account the power to delete all the content. <br>
-    3. Now you're on : http://localhost/public/index.php?controller=home <br>
-    4. You can start testing on your own by updating your account on the profile section (username, password and profile picture). <br>
+    3. You're now on : http://localhost/public/index.php?controller=home <br>
+    4. You can start testing on your own by updating your account on the "profile" section (username, password and profile picture). <br>
     5. Add your own content on the "ventiler" section (must have a least a text or a image file) <br>
-    6. Disconnect on the left down section "Deconnection" <br>
+    6. Log out on the left down section "Deconnection" <br>
     7. Create another user account. <br>
     8. Notice that you can't delete the content uploaded by your first account. <br>
     9. Test the same way as the first time (try breaking it by having two admin users or by uploading wrong format file). <br>
