@@ -2,6 +2,7 @@
 // this script is a starting setup
 
 // session handling
+
 if(!isset($_SESSION['started'])){
     session_start();
     $_SESSION['started'] = true;
@@ -32,6 +33,16 @@ function DB(): PDO {
     } catch (PDOException $e) {
         exit("Error: " . $e->getMessage());
     }
+}
+
+// return the correct syntax for url
+function route($controller): string {
+    return "index.php?controller=$controller";
+}
+
+// return projet asset with the correct path
+function get_asset($string): void {
+    echo "../assets/$string";
 }
 
 //return the path with the image name
