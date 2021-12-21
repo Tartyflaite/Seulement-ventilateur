@@ -1,10 +1,11 @@
-<img src="./assets/Seulement_Ventilateur_-_transparent.png" />
+<img src="https://imgur.com/MwHqpd5" />
 A completely original and innovative social media !
 
 <h2 style="color: #45AFFF">Install and setup</h2>
 <p style="text-align: justify">
     To become a VentiloFan, you will need to setup your local environement.
     And, to do so, you will need to setup a database and host locally your own version of Seulement Ventilateurs.
+    ⚠ Note that if you can use your solution for local database server and php interpreter
 </p>
 
 
@@ -14,8 +15,7 @@ A completely original and innovative social media !
     <a href="https://laragon.org/">Laragon</a> as we used it to build this project.
 </p>
 
-<h3 style="color: #45AFFF">Setting up Laragon</h3>
-(TUTO LARAGON)
+
 
 <img src="https://cdn-images-1.medium.com/fit/t/1600/480/1*oLFo5u_zyBkuS8WpSoXBIQ.png" width="200" />
 <p style="text-align: justify">
@@ -27,10 +27,20 @@ A completely original and innovative social media !
 
 
 
-<h3 style="color: #45AFFF">Setting up PhpStorm</h3>
-(TUTO PHPSTORM)
-(BIEN PRECISER QU'ON A UN SCRIPT SQL POUR LES TABLES)
+<h3 style="color: #45AFFF">Setting up PhpStorm and Laragon</h3>
+We won't make a tutorial on how to setup up PhpStorm and Laragon, but you can find our sources here :
 
+> [French tutorial made by a Paris Descartes alumni, Arsène Lapostolet](https://knowledge.arsenelapostolet.fr/books/d%C3%A9veloppement-web-en-php/page/mettre-en-place-un-environnement-de-d%C3%A9veloppement-php-mysql)
+
+<h3 style="color: #45AFFF">Requirement</h3>
+The database must be named : "**SeulementVentilateur**"
+The database password must be : "**OnlyFans**"
+It's by default but please make sure you're using the port : "**3306**"
+the user is : "**root**"
+
+<h4 style="color: #45AFFF">Finally</h4>
+
+In a query console, create table using the sql script in the projet. First **fans table** then **content table**
 
 <h2 style="color: #45AFFF">Features</h2>
 <p style="text-align: justify">
