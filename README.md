@@ -142,7 +142,7 @@ create table content(
     7. Create another user account. <br>
     8. Notice that you can't delete the content uploaded by your first account. <br>
     9. Test the same way as the first time (try breaking it by having two admin users or by uploading wrong format file). <br>
-    10. Play with the urls by changing the controller (see Controllers directory in the source code).
+    10. Play with the urls by changing the controller (see Controllers directory in the source code). <br>
     11. Log out and test the login "Connectez vous" by using the account credentials you made previously. (you still can try to break the site by using non-existent account)<br>
     12. Feel free to test on your own and explore the website possibility.<br>
     12. And you should be done testing our website, you can now take a look at the source code.<br>
