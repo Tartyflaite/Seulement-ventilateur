@@ -35,11 +35,12 @@ We won't make a tutorial on how to setup up PhpStorm and Laragon, but you can fi
 > [French tutorial made by a Paris Descartes alumni, Arsène Lapostolet](https://knowledge.arsenelapostolet.fr/books/d%C3%A9veloppement-web-en-php/page/mettre-en-place-un-environnement-de-d%C3%A9veloppement-php-mysql)
 
 <h3 style="color: #45AFFF">Requirement</h3>
-1. The database must be named : "SeulementVentilateurs" <br>
-2. The database password must be : "OnlyFans" <br>
-3. It's by default but please make sure you're using the port : "3306" <br>
-4. the user is : "root" <br>
-5. php interpreter (last version prefered) <br>
+1. php interpreter (last version prefered) <br>
+2. The database must be named : "SeulementVentilateurs" <br>
+3. The database password must be : "OnlyFans" <br>
+4. It's by default but please make sure you're using the port : "3306" <br>
+5. the user is : "root" <br>
+
 you can change the database information in the config.php file if needed
 
 <h4 style="color: #45AFFF">Finally</h4>
