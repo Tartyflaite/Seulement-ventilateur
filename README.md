@@ -46,6 +46,25 @@ you can change the database information in the config.php file if needed
 
 In a query console, create table using the sql script in the projet. First **fans table** then **content table**, and you ready to go.
 
+```sql
+create table fans(
+    userId integer auto_increment,
+    username varchar(255) unique,
+    password varchar(255),
+    profilPictureName varchar(255),
+    primary key (userId)
+);
+
+create table content(
+    contentId integer auto_increment,
+    description varchar(255),
+    imageName varchar(255),
+    userId INTEGER,
+    primary key (contentId),
+    foreign key (userId) references fans (userId)
+);
+```
+
 <h3 style="color: #45AFFF">Disclaimer</h3>
 
 <p style="text-align: justify">
