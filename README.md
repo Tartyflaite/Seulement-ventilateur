@@ -39,7 +39,8 @@ We won't make a tutorial on how to setup up PhpStorm and Laragon, but you can fi
 2. The database password must be : "OnlyFans" <br>
 3. It's by default but please make sure you're using the port : "3306" <br>
 4. the user is : "root" <br>
-5. php interpreter (last version prefered)
+5. php interpreter (last version prefered) <br>
+you can change the database information in the config.php file if needed
 
 <h4 style="color: #45AFFF">Finally</h4>
 
