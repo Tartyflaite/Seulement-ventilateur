@@ -85,23 +85,17 @@ In a query console, create table using the sql script in the projet. First **fan
     out user cannot access the home page.
 </p>
 
-<h3 style="color: #45AFFF"></h3>
+
+<h3 style="color: #45AFFF">Front-end</h3>
 <p style="text-align: justify">
-    For your experience to be the best and to avoid having to reconnect each time you come and visit the site, we
-    elaborated a session system that allow you to be redirected directly to the home page of the site if you have been
-    connected before. You will be logged as the last user you logged in as. Of course you can always choose to end your
-    session by disconnecting. Also, we made sure that a logged in user cannot access the login page and that a logged
-    out user cannot access the home page.
+    Ok ... we were very "inspired" by twitter on this one, notice that the web-site is responsive and mobile ready
 </p>
 
-<h3 style="color: #45AFFF">Ventilate</h3>
+<h3 style="color: #45AFFF">Profil editor</h3>
 <p style="text-align: justify">
-    The main part of the website is to share your pictures and comments about ventilators. When you arrive at the home
-    page, you will be able to see all the posts that were made by the precedent users and the comment they put with.
-    Each user has the possibility to delete his own content and the admin session can delete every content that does not
-    suit our platform behavior rules.
+    As every human being, we all want to be unique. You will be able to edit your account credentials and profil picture in the profil editor section.
+    (you can update 1 at the time
 </p>
-
 
 
 <h3 style="color: #45AFFF">Error Handling</h3>
