@@ -110,7 +110,7 @@ create table content(
 
 <h3 style="color: #45AFFF">Front-end</h3>
 <p style="text-align: justify">
-    Ok ... we were very "inspired" by twitter on this one, notice that the web-site is responsive and mobile ready.
+    Ok ... we were very "inspired" by twitter (and OnlyFans) on this one, notice that the web-site is responsive and mobile ready.
 </p>
 
 <h3 style="color: #45AFFF">Profil editor</h3>
