@@ -1,3 +1,5 @@
+// This script make modal pop up
+
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
@@ -36,7 +38,7 @@ function closeModal(modal) {
 }
 
 
-//PREVIEW IMAGE
+// this script handle image preview
 
 const importFile = document.getElementById("import_file")
 const previewImg = document.querySelector(".image_preview_image")
@@ -54,6 +56,8 @@ trashDelete.addEventListener("click", () =>{
     return;
 })
 
+
+// our poor js knowledge forces us to us 2 same function with a litlle difference
 importFile.addEventListener("change", function (){
     const file = (this.files[0])
 

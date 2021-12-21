@@ -35,7 +35,7 @@
 
                 <div class="modal" id="modal_inscription">
                     <button data-close-button class="close-button">&times;</button>
-
+                    <!-- Register from-->
                     <form method="post" action="index.php?controller=register" name="register-form" class="form">
                         <h3>Inscrivez vous</h3>
 
@@ -61,6 +61,7 @@
 
                 <div class="modal" id="modal_connection">
                     <button data-close-button class="close-button">&times;</button>
+                    <!-- login from-->
 
                     <form method="post" action="index.php?controller=login" name="login-form" class="form">
                         <h3>Connectez vous</h3>
@@ -82,6 +83,7 @@
                 </div>
             </div>
 
+            <!--  errors are show here if exist   -->
             <?php if (isset($_SESSION['flash']['error'])){
                 echo '<div class="error_wrapper">
                         <div class="error">

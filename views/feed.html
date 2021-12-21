@@ -1,3 +1,5 @@
+<!--This html is the declaration of a content item-->
+
 <div class="item">
     <div class="small_logo">
         <img src="<?php echo 'ProfilePicture/'.$user_info['profilPictureName'];?>" alt="user_logo">
@@ -7,11 +9,13 @@
         <span class="description"><?php echo $description;?></span>
         <img class="content_item" src="<?php if($file != ''){echo $file;} ?>">
 
-
+        <!--   add a trash icon to let the user delete his content    -->
         <?php
             if($_SESSION['username'] == $user_info['username'] || $_SESSION['username'] == 'admin'){
                 echo '<div class="delete_wrapper">
                         <form method="post" action="index.php?controller=deleteContent" name="form">
+                            <!-- each trash button are setted up with a value = the content id-->
+                            <!-- for the trash form to know wich content to delete-->
                             <button type="submit" name="submit" value="'.$row['contentId'].'" class="delete_button">
                                 <i class="bx bx-trash" style="color:#ea4040" ></i>
                             </button>

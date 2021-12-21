@@ -1,5 +1,5 @@
 <?php
-
+// this return the database information
 return [
     'host' => 'localhost',
     'username' => 'root',

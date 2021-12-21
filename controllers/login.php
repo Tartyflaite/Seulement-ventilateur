@@ -1,7 +1,11 @@
 <?php
+// this script will login the user.
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+//  user posted information
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+    //  model : select every infos from the user
     $query = DB()->prepare("SELECT * FROM fans WHERE username=?");
     $query->execute([$username]);
     $result = $query->fetch(PDO::FETCH_ASSOC);
@@ -13,6 +17,7 @@
         exit;
     }
 
+    //  check to see if the given password match our stored password using the same hash.
     if(password_verify($_POST['password'], $result['password'])){
         $_SESSION['connected'] = true;
         $_SESSION['username'] = $username;
@@ -22,7 +27,7 @@
         exit;
     }
 
-
+//  error handling
 $_SESSION['flash']['error'] = 'Mauvais mot de passe.';
 $_SESSION['flash']['username'] = $username;
 header( 'Location: /public/index.php?controller=index' );

@@ -39,6 +39,7 @@
                     </li>
 
                     <li>
+                        <!-- show the user's profile picture and username -->
                         <?php load_account_info() ?>
                     </li>
 
@@ -54,6 +55,7 @@
             </div>
 
             <div class="main">
+                <!-- Error are shown here -->
                 <?php if (isset($_SESSION['flash']['error'])){
                     echo '<div class="error">
                             <p>
@@ -68,7 +70,7 @@
                     Accueil
                     <i class='bx bx-cross' style='color:#ffffff'  ></i>
                 </div>
-
+                <!--   the feed is loaded here         -->
                 <?php feed(); ?>
 
             </div>
@@ -92,6 +94,7 @@
 
         <div class="modal" id="modal_profil">
             <button data-close-button class="close-button">&times;</button>
+            <!--      profil editor form      -->
             <form method="post" action="index.php?controller=update" enctype="multipart/form-data" class="profil_item">
                 Editeur de profil
 
@@ -120,9 +123,11 @@
 
 
         </div>
-
         <div class="modal" id="modal_ventiler">
             <button data-close-button class="close-button">&times;</button>
+
+            <!--    Upload content form    -->
+
             <form method="post" action="index.php?controller=addContent" name="add_content" enctype="multipart/form-data" class="upload_content">
                 <div class="text_decription">
                     <textarea name="description" id="description" placeholder="Quoi de neuf ?"></textarea>

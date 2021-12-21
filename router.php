@@ -1,9 +1,13 @@
 <?php
+// this script is a starting setup
+
+// session handling
 if(!isset($_SESSION['started'])){
     session_start();
     $_SESSION['started'] = true;
 }
 
+// Content directory handling
 if (!file_exists('ImageVentilo')) {
     mkdir('ImageVentilo', 0777, true);
 }
@@ -15,7 +19,7 @@ $conn = null;
 require_once("feed.php");
 require_once("load_account_info.php");
 
-
+// create a PDO with database infos
 function DB(): PDO {
     global $config;
     global $conn;
@@ -30,21 +34,14 @@ function DB(): PDO {
     }
 }
 
-
-function route($controller): string {
-    return "index.php?controller=$controller";
-}
-
-function get_asset($string): void {
-    echo "../assets/$string";
-}
-
+//return the path with the image name
 function get_ventil($ventil): string {
     if($ventil == '')
         return '';
     return "./ImageVentilo/$ventil";
 }
 
+//exit the script and setting possible error
 function leaveScript($error){
     $_SESSION['flash']['error'] = $error;
 
@@ -55,11 +52,11 @@ function leaveScript($error){
 }
 
 $controller = $_GET['controller'] ?? 'index';
-
+//controllers error handling
 if(!file_exists(ROOT.'\controllers\\'.$controller.'.php')){
     header("HTTP/1.1 404 Not Found");
     exit;
 }
 
-
+// set the given controller
 require_once('controllers\\'.$controller.'.php');
