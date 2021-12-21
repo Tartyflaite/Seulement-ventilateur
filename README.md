@@ -1,5 +1,7 @@
 <img src="https://i.imgur.com/MwHqpd5.png" />
-A completely original and innovative social media !
+<p style="text-align: center">
+    A completely original and innovative social media !
+</p>
 
 <h2 style="color: #45AFFF">Install and setup</h2>
 <p style="text-align: justify">
@@ -41,6 +43,32 @@ We won't make a tutorial on how to setup up PhpStorm and Laragon, but you can fi
 <h4 style="color: #45AFFF">Finally</h4>
 
 In a query console, create table using the sql script in the projet. First **fans table** then **content table**, and you ready to go.
+
+<h2 style="color: #45AFFF">Website Walktrough</h2>
+<p style="text-align: justify">
+    This chapter will guide you in our website.
+</p>
+
+<h3 style="color: #45AFFF">Disclaimer</h3>
+
+<p style="text-align: justify">
+    Don't use Firefox browser or be ready to setup the necessary configurations for it to read localhost urls.
+</p>
+
+<h3 style="color: #45AFFF">Starting</h3>
+<p style="text-align: justify">
+    1. Start by typing in the search tab : localhost/public/index.php <br>
+    2. Click on "inscription to make the first account, name it "admin" as it grant the account the power to delete all the content. <br>
+    3. Now you're on : http://localhost/public/index.php?controller=home <br>
+    4. You can start testing on your own by updating your account on the profile section (username, password and profile picture). <br>
+    5. Add your own content on the "ventiler" section (must have a least a text or a image file) <br>
+    6. Disconnect on the left down section "Deconnection" <br>
+    7. Create another user account. <br>
+    8. Notice that you can't delete the content uploaded by your first account. <br>
+    9. Test the same way as the first time (try breaking it by having two admin users or by uploading wrong format file). <br>
+    10. And you should be done testing our website, you can now take a look to the source code.
+</p>
+
 
 <h2 style="color: #45AFFF">Features</h2>
 <p style="text-align: justify">
