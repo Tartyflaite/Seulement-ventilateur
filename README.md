@@ -7,7 +7,7 @@
 <p style="text-align: justify">
     To become a VentiloFan, you will need to setup your local environement.
     And, to do so, you will need to setup a database and host locally your own version of Seulement Ventilateurs.
-    ⚠ Note that if you can use your solution for local database server and php interpreter
+    ⚠ Note that if you can use your own solution for local database server and php interpreter
 </p>
 
 
