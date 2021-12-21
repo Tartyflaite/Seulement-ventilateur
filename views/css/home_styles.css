@@ -234,12 +234,7 @@ body{
     padding: 0.2em 1em;
     background: #192734;
     border-radius: 15px;
-    color: #655555;
     font-size: 15px;
-}
-
-.container .left_credit #credit{
-    margin-top: 2em;
 }
 
 .container .left_credit .content .content_header{
